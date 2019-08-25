@@ -55,6 +55,10 @@ you play in column 4 then you can win in no more than 23 moves from now",
 whereas "6-04" means "if you play in column 6 you will lose in no fewer
 than 4 moves".
 
+The green ACT LED on the Raspberry pi shows activity status. It is on 
+during initialization after power-up (takes about 2 seconds) and 
+flashes on/off while computing solutions.
+
 # Acknowledgements
 
 The Connect Four solver algorithm was taken and adapted from Pascal Pons'
