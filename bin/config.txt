@@ -1,0 +1,10 @@
+init_uart_baud=9600
+arm_freq=1100
+gpu_freq=500
+core_freq=500
+sdram_freq=500
+arm_freq_min=50
+gpu_freq_min=50
+core_freq_min=50
+sdram_freq_min=50
+hdmi_blanking=1

@@ -1,0 +1,32 @@
+
+CFLAGS = -Wall -Wextra -O3 -g -nostdlib -nostartfiles -fno-stack-limit -ffreestanding -Wno-unused-parameter -D_X86
+CPPFLAGS = $(CFLAGS) -fno-exceptions -fno-rtti
+
+
+OB = main.o
+OOB = Solver.oo Memory.oo
+
+
+BUILD_DIR = build-x86
+SRC_DIR = src
+
+OBJS=$(patsubst %.o,$(BUILD_DIR)/%.o,$(OB)) $(patsubst %.oo,$(BUILD_DIR)/%.oo,$(OOB))
+
+LIBGCC=$(shell $(ARMGNU)-gcc -print-libgcc-file-name)
+
+all: connect4.exe
+
+connect4.exe : $(OBJS) 
+	g++ $(OBJS) -o connect4.exe
+
+$(BUILD_DIR)/%.o : $(SRC_DIR)/%.c | $(BUILD_DIR)
+	gcc $(CFLAGS) -c $< -o $@
+
+$(BUILD_DIR)/%.oo :  $(SRC_DIR)/%.cpp | $(BUILD_DIR) 
+	g++ $(CPPFLAGS) -c $< -o $@
+
+$(BUILD_DIR) : 
+	mkdir $(BUILD_DIR)
+
+.PHONY clean :
+	rm -rf $(BUILD_DIR) connect4.exe
