@@ -1,10 +1,11 @@
 # Raspberry Pi Connect Four Solver
 
-For a school project, my son created a robot that plays the Connect Four
-game controlled by an Arduino, which played well but nowhere close to perfect.
+For a school project, my son created a robot that plays Connect Four.
+Controlled by an Arduino the robot played fairly well but nowhere close to perfect.
 
 Since I knew that Connect Four is a solved game I set out to create an
-addition to his project that could help it play a perfect game.
+addition to his project that could help it play a perfect game. It just needed
+more computing power and a better algorithm.
 
 In the end I settled for an implementation using a Raspberry Pi Zero that
 can be sent the current position on the board and will reply with an optimal
